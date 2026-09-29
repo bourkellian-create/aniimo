@@ -4,6 +4,8 @@ Application PC (Windows, macOS, Linux) qui **synchronise automatiquement ta prog
 
 > Projet de fan, non officiel, sans lien avec Pawprint Studio ni l'éditeur d'Aniimo.
 
+![Collection synchronisée](docs/demo/collection.png)
+
 ## Comment ça synchronise, sans risque pour ton compte
 
 Aniimo n'a **pas d'API officielle**, et ses conditions d'utilisation interdisent la rétro-ingénierie, le sondage des serveurs et l'extraction de données. Aniimo Sync ne fait donc **rien de tout ça** :
