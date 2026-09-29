@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'" />
+    <title>Aniimo Sync</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Aniimo Sync</h1>
+      <div id="status" class="status"></div>
+    </header>
+
+    <nav>
+      <button data-tab="collection" class="active">Collection</button>
+      <button data-tab="pending">À confirmer <span id="pending-count" class="badge" hidden></span></button>
+      <button data-tab="friends">Amis &amp; affinité</button>
+      <button data-tab="journal">Journal</button>
+      <button data-tab="settings">Réglages</button>
+    </nav>
+
+    <main>
+      <section id="collection" class="tab active">
+        <div class="summary">
+          <div>
+            <strong id="caught-count">0</strong> Aniimo synchronisés
+            <span id="illusory-count" class="muted"></span>
+          </div>
+          <div id="aniilog-progress" class="progress" hidden>
+            <span id="aniilog-label"></span>
+            <div class="bar"><div id="aniilog-bar"></div></div>
+          </div>
+        </div>
+        <input id="filter" type="search" placeholder="Filtrer…" />
+        <div id="grid" class="grid"></div>
+      </section>
+
+      <section id="pending" class="tab">
+        <p class="muted">Ce que l'app a lu mais préfère te faire confirmer.</p>
+        <ul id="pending-list" class="cards"></ul>
+      </section>
+
+      <section id="friends" class="tab">
+        <form id="friend-form" class="inline">
+          <input name="uid" placeholder="UID de l'ami" pattern="\d{6,12}" required />
+          <input name="name" placeholder="Pseudo (facultatif)" />
+          <button>Ajouter</button>
+        </form>
+        <table>
+          <thead><tr><th>Ami</th><th>UID</th><th>Affinité</th><th>Mis à jour</th><th></th></tr></thead>
+          <tbody id="friends-list"></tbody>
+        </table>
+      </section>
+
+      <section id="journal" class="tab">
+        <ul id="events" class="events"></ul>
+      </section>
+
+      <section id="settings" class="tab">
+        <fieldset>
+          <legend>Lecture automatique de l'écran du jeu</legend>
+          <label><input id="auto-capture" type="checkbox" /> Lire la fenêtre du jeu pendant que je joue</label>
+          <label>Toutes les <input id="interval" type="number" min="2" max="60" /> secondes</label>
+          <label>Titre de la fenêtre du jeu contient <input id="window-match" /></label>
+          <p class="muted">Le jeu doit être en mode fenêtré ou « plein écran fenêtré » : le plein écran exclusif renvoie une image noire.</p>
+        </fieldset>
+        <fieldset>
+          <legend>Dossiers de captures d'écran surveillés</legend>
+          <ul id="folders"></ul>
+          <button id="add-folder">Ajouter un dossier…</button>
+          <button id="import">Importer des captures…</button>
+        </fieldset>
+        <fieldset>
+          <legend>Mon compte</legend>
+          <label>Mon UID <input id="my-uid" pattern="\d{6,12}" /></label>
+        </fieldset>
+        <fieldset>
+          <legend>Noms d'Aniimo reconnus</legend>
+          <form id="name-form" class="inline">
+            <input name="name" placeholder="Nom d'un Aniimo" required />
+            <button>Ajouter</button>
+          </form>
+          <p id="names" class="muted"></p>
+        </fieldset>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

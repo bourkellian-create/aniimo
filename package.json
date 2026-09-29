@@ -1,0 +1,24 @@
+{
+  "name": "aniimo-sync",
+  "version": "0.1.0",
+  "description": "Compagnon PC pour Aniimo : lit l'écran du jeu et tes captures d'écran pour synchroniser automatiquement ta collection, sans toucher au jeu.",
+  "main": "src/main/main.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test \"test/*.test.js\"",
+    "ocr": "node scripts/ocr-check.js"
+  },
+  "dependencies": {
+    "@tesseract.js-data/eng": "^1.0.0",
+    "@tesseract.js-data/fra": "^1.0.0",
+    "chokidar": "^5.0.0",
+    "fastest-levenshtein": "^1.0.16",
+    "tesseract.js": "^7.0.0"
+  },
+  "devDependencies": {
+    "electron": "^44.4.5"
+  },
+  "type": "module"
+}

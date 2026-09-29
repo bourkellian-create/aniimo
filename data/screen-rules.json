@@ -1,0 +1,26 @@
+{
+  "_comment": "Mots-clés qui identifient chaque écran du jeu (anglais + français). À ajuster avec de vraies captures : `npm run ocr -- chemin/capture.png` affiche le texte lu et l'écran détecté.",
+  "screens": {
+    "catch": {
+      "priority": 4,
+      "keywords": ["caught", "captured", "capture successful", "new aniimo", "capturé", "capture réussie", "nouvel aniimo"]
+    },
+    "affinity": {
+      "priority": 3,
+      "keywords": ["affinity", "affinité", "good friend", "illusory friend", "bon ami"]
+    },
+    "profile": {
+      "priority": 2,
+      "keywords": ["uid", "pathfinder", "profile", "profil", "éclaireur"]
+    },
+    "aniilog": {
+      "priority": 1,
+      "keywords": ["aniilog", "research", "recherche", "research points", "points de recherche"]
+    }
+  },
+  "variants": {
+    "illusory": ["illusory", "illusoire"],
+    "sparkling": ["sparkling", "scintillant", "étincelant"]
+  },
+  "affinityLevels": ["Good Friend", "Illusory Friend", "Illusory Friends", "Bon ami", "Ami illusoire"]
+}
